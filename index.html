@@ -33,13 +33,30 @@
             </div>
         </header>
 
+        <!-- AI Search Box -->
+        <section class="clean-section fade-in ai-search-section">
+            <div class="ai-search-wrapper">
+                <div class="ai-search-input-group">
+                    <i data-lucide="sparkles" class="ai-icon"></i>
+                    <input type="text" id="aiSearchInput" placeholder="도연 님에 대해 AI에게 물어보세요! (예: 장점이 뭐야?)" autocomplete="off">
+                    <button id="aiSearchBtn"><i data-lucide="send"></i></button>
+                </div>
+                <div id="aiResponseContainer" class="ai-response-container hidden">
+                    <div class="ai-loading hidden" id="aiLoading">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    </div>
+                    <div id="aiResponseText" class="ai-response-text hidden"></div>
+                </div>
+            </div>
+        </section>
+
         <!-- About Me -->
         <section class="clean-section fade-in">
             <h2 class="section-title">About Me</h2>
             <p class="intro-text">
-                <strong>데이터 분석과 파이프라인에 대한 이해도</strong>를 바탕으로 비즈니스에 필요한 인사이트를 도출합니다.<br><br>
-                단순한 모델 적용에 그치지 않고, 데이터의 수집·저장·처리·전달 과정까지 포함한 데이터 흐름 전체를 고려한 분석을 지향합니다. 이를 통해 문제의 표면적인 결과가 아닌 근본 원인을
-                규명하고, 재현 가능한 해결 방안을 설계하는 데 집중해왔습니다.<br>
+                <strong>데이터 분석과 데이터 흐름을 함께 이해하는 데이터 분석가를 목표로</strong>, 비즈니스에 의미 있는 인사이트를 도출할 수 있는 역량을 키워가고 있습니다.<br><br>
+                단순히 모델을 적용하는 데 그치지 않고, 데이터가 어떻게 수집되고 저장되며 전달되는지까지 함께 이해하려고 노력하고 있습니다. 이러한 과정을 통해 결과만 보는 것이 아니라, 문제의 원인을
+                더 깊이 살펴보려고 합니다.<br>
                 또한, 꼼꼼한 데이터 검증과 체계적인 접근 방식을 바탕으로 분석 결과의 신뢰도를 높이고, 조직이 보다 합리적이고 근거 기반의 의사결정을 내릴 수 있도록 기여하는 책임감 있는 데이터
                 분석가로 성장하고자 합니다.
             </p>
@@ -58,7 +75,8 @@
                 </div>
                 <div class="cert-compact">
                     <p class="cert-text"><i data-lucide="award"></i> <strong>ADsP, SQLD, ERP 2급</strong> 취득 및
-                        <strong>빅데이터분석기사</strong>(졸업유예 취득 예정)</p>
+                        <strong>빅데이터분석기사</strong>(졸업유예 취득 예정)
+                    </p>
                 </div>
             </div>
         </section>
@@ -122,60 +140,92 @@
                         <i data-lucide="target"></i>
                         <h3>문제의 본질을 파고드는 '원인 분석력'</h3>
                     </div>
-                    <p>복잡한 에러나 논리적 오류를 마주했을 때 단순한 임시 해결이 아니라, 로그와 데이터 흐름을 기반으로 문제의 근본 원인을 추적합니다. 재현 가능한 방식으로 문제를 해결하며, 동일한 오류가 반복되지 않도록 구조적으로 개선하는 데 집중합니다.</p>
+                    <p>복잡한 에러나 논리적 오류를 마주했을 때 단순한 임시 해결이 아니라, 로그와 데이터 흐름을 기반으로 문제의 근본 원인을 추적합니다. 재현 가능한 방식으로 문제를 해결하며,
+                        동일한 오류가 반복되지 않도록 구조적으로 개선하는 데 집중합니다.</p>
                 </div>
                 <div class="clean-card detail-card">
                     <div class="card-header">
                         <i data-lucide="search"></i>
                         <h3>데이터 신뢰도를 높이는 '정밀한 검증력'</h3>
                     </div>
-                    <p>작은 수치 변화나 이상치도 놓치지 않고 검증하는 습관을 통해 분석 결과의 정확도를 높입니다. 데이터 전처리와 검증 과정을 체계적으로 수행하여, 결과를 그대로 의사결정에 활용할 수 있는 수준의 신뢰도를 확보합니다.</p>
+                    <p>작은 수치 변화나 이상치도 놓치지 않고 검증하는 습관을 통해 분석 결과의 정확도를 높입니다. 데이터 전처리와 검증 과정을 체계적으로 수행하여, 결과를 그대로 의사결정에 활용할
+                        수 있는 수준의 신뢰도를 확보합니다.</p>
                 </div>
                 <div class="clean-card detail-card">
                     <div class="card-header">
                         <i data-lucide="users"></i>
                         <h3>결과를 이끌어내는 '협업 기반 소통력'</h3>
                     </div>
-                    <p>단순한 의견 교환을 넘어, 데이터와 근거를 기반으로 소통하며 팀 내 의사결정을 돕습니다. 다양한 관점을 조율하여 최적의 결론을 도출하고, 분석 결과가 실제 실행으로 이어질 수 있도록 연결하는 역할을 수행합니다.</p>
+                    <p>단순한 의견 교환을 넘어, 데이터와 근거를 기반으로 소통하며 팀 내 의사결정을 돕습니다. 다양한 관점을 조율하여 최적의 결론을 도출하고, 분석 결과가 실제 실행으로 이어질 수
+                        있도록 연결하는 역할을 수행합니다.</p>
                 </div>
             </div>
         </section>
 
         <!-- Growth Roadmap -->
         <section class="clean-section fade-in">
-            <h2 class="section-title">Growth Roadmap (2026-2028)</h2>
+            <h2 class="section-title">Growth Roadmap (2026-2030)</h2>
             <div class="roadmap-container">
+
                 <div class="roadmap-item completed">
                     <div class="check-circle"><i data-lucide="check"></i></div>
                     <div class="roadmap-content">
-                        <h4>Phase 1: Foundation & Execution</h4>
-                        <p>Python/SQL 역량 기반 ADsP, SQLD, ERP 2급 취득. MSA 아키텍처 및 RabbitMQ 기반의 백엔드 데이터 파이프라인 구축 완료.</p>
+                        <h4>2026년 | 기초 역량 다지기</h4>
+                        <p>
+                            데이터 분석 기초를 더 단단하게 다지는 시기로 생각하고 있습니다.
+                            Python과 SQL을 중심으로 데이터를 직접 다뤄보는 연습을 이어가고,
+                            빅데이터분석기사 취득을 목표로 준비하고 있습니다.
+                            공모전과 개인 프로젝트를 통해 전처리와 기본적인 분석 경험을 쌓고 있습니다.
+                        </p>
                     </div>
                 </div>
+
                 <div class="roadmap-item upcoming">
                     <div class="check-circle empty"></div>
                     <div class="roadmap-content">
-                        <h4>Phase 1.5: Advanced Certifications</h4>
-                        <p>졸업유예 기간 내 데이터 분석 전문성 극대화를 위한 빅데이터분석기사 자격증 취득 예정.</p>
+                        <h4>2027년 | 취업 준비 및 실무 역량 보완</h4>
+                        <p>
+                            졸업 유예 기간을 활용해 부족한 부분을 보완하고, 실제 데이터를 다루는 경험을 늘리는 데 집중하고자 합니다.
+                            포트폴리오를 정리하고 다양한 데이터를 분석해보며, 실무에 가까운 분석 경험을 쌓아 취업을 목표로 준비하고 있습니다.
+                        </p>
                     </div>
                 </div>
+
                 <div class="roadmap-item upcoming">
                     <div class="check-circle empty"></div>
                     <div class="roadmap-content">
-                        <h4>Phase 2: Cloud DW & Visualization</h4>
-                        <p>AWS/GCP 기반 클라우드 데이터 웨어하우스 설계 실습 및 Tableau를 활용한 의사결정용 비즈니스 대시보드 고도화 (1~2년 차 목표).</p>
+                        <h4>2028년 | 실무 적응 및 기본 역할 수행</h4>
+                        <p>
+                            입사 후에는 데이터 처리와 전처리, 간단한 분석 업무를 맡아 정확하게 수행하는 데 집중하고자 합니다.
+                            선배들의 업무 방식을 배우며 실무 흐름을 익히고, 주어진 업무를 안정적으로 수행할 수 있는 기반을 만들고 싶습니다.
+                        </p>
                     </div>
                 </div>
+
                 <div class="roadmap-item upcoming">
                     <div class="check-circle empty"></div>
                     <div class="roadmap-content">
-                        <h4>Phase 3: AI/ML & Data Strategy</h4>
-                        <p>비즈니스 예측 시스템(ML) 고도화 및 전사적 데이터 거버넌스를 구축하여 데이터 프로덕트를 주도하는 리더로 성장 (3~5년 차 목표).</p>
+                        <h4>2029년 | 독립적인 분석 수행</h4>
+                        <p>
+                            점차 혼자서 데이터를 분석하고 결과를 정리할 수 있는 수준까지 성장하고자 합니다.
+                            단순한 요청 수행을 넘어, 데이터를 바탕으로 의미 있는 내용을 도출하고 팀 내에서 활용될 수 있도록 기여하고 싶습니다.
+                        </p>
                     </div>
                 </div>
+
+                <div class="roadmap-item upcoming">
+                    <div class="check-circle empty"></div>
+                    <div class="roadmap-content">
+                        <h4>2030년 | 문제 정의 및 인사이트 제시</h4>
+                        <p>
+                            데이터를 통해 문제를 스스로 정의하고, 분석 결과를 바탕으로 방향을 제시할 수 있는 역할로 성장하는 것을 목표로 하고 있습니다.
+                            단순한 결과 전달을 넘어 의사결정에 도움이 되는 인사이트를 제시할 수 있는 분석가가 되고 싶습니다.
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </section>
-
         <footer class="clean-footer fade-in">
             <p>© 2026 Doyeon Kim. All rights reserved.</p>
         </footer>

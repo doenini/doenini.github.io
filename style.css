@@ -36,16 +36,23 @@ body {
     display: flex; flex-direction: column; gap: 70px;
 }
 
-/* 추가된 헤더 상단 (이력서 다운로드 버튼 배치) */
 .hero-top {
     display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;
+}
+
+/* ✅ 다운로드 버튼 그룹 */
+.download-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .btn-download {
     display: flex; align-items: center; gap: 6px;
     padding: 8px 16px; background-color: var(--accent-color); color: #fff;
     border-radius: 20px; font-size: 0.85rem; font-weight: 600; text-decoration: none;
-    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s; box-shadow: 0 4px 10px rgba(212, 163, 115, 0.3);
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 10px rgba(212, 163, 115, 0.3);
 }
 
 .btn-download:hover {
@@ -54,6 +61,25 @@ body {
 }
 
 .btn-download .lucide { width: 16px; height: 16px; color: #fff; }
+
+/* ✅ .md 보조 버튼 — 크기 작고 투명 배경 */
+.btn-download-md {
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    box-shadow: none;
+    font-size: 0.78rem;
+    padding: 6px 12px;
+}
+
+.btn-download-md:hover {
+    background-color: var(--accent-light);
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    box-shadow: none;
+}
+
+.btn-download-md .lucide { color: inherit; }
 
 .clean-hero { margin-bottom: 10px; }
 .greeting { font-size: 0.95rem; color: var(--text-secondary); letter-spacing: 1.5px; font-weight: 500; }
@@ -70,7 +96,6 @@ body {
     margin-bottom: 24px; font-weight: 600; display: flex; align-items: center; gap: 8px;
 }
 
-/* 실시간 API 펄스 애니메이션 */
 .live-pulse {
     display: inline-block; width: 8px; height: 8px; background-color: #22c55e; border-radius: 50%;
     animation: pulse 1.5s infinite; margin-left: 4px;
@@ -96,6 +121,76 @@ body {
 .cert-text strong { color: var(--text-primary); font-weight: 600; }
 .cert-text .lucide { color: var(--accent-color); width: 16px; height: 16px; }
 
+/* ✅ 스킬 바 차트 */
+.skill-chart-wrapper {
+    margin-top: 8px;
+    padding: 20px 20px 16px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+}
+
+.skill-chart-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+.skill-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.skill-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.skill-name {
+    font-size: 0.88rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    min-width: 85px;
+    flex-shrink: 0;
+}
+
+.skill-track {
+    flex: 1;
+    height: 7px;
+    background-color: var(--bg-main);
+    border-radius: 9999px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.skill-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 9999px;
+    background-color: var(--accent-color);
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-pct {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    min-width: 34px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.skill-chart-note {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    margin-top: 14px;
+    opacity: 0.7;
+}
+
 .card-list { display: flex; flex-direction: column; gap: 20px; }
 .clean-card { padding: 28px; background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.015); }
 .clean-card:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(212, 163, 115, 0.1); border-color: var(--accent-color); }
@@ -104,7 +199,6 @@ body {
 .highlight-badge { font-size: 0.75rem; padding: 4px 10px; background-color: var(--accent-light); color: var(--accent-color); border-radius: 6px; font-weight: 600; }
 .clean-card p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
 
-/* 추가된 프로젝트 자세히 보기 버튼 */
 .card-actions { margin-top: 16px; }
 .btn-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); text-decoration: none; padding: 8px 14px; background: rgba(0,0,0,0.03); border-radius: 8px; transition: all 0.2s; }
 @media (prefers-color-scheme: dark) { .btn-link { background: rgba(255,255,255,0.05); color: #ccc; } }
@@ -115,7 +209,6 @@ body {
 .card-header .lucide { color: var(--accent-color); width: 20px; height: 20px; }
 .card-header h3 { margin-bottom: 0; }
 
-/* Dynamic GitHub Section Styles */
 .github-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 @media (max-width: 600px) { .github-grid { grid-template-columns: 1fr; } }
 .repo-card { display: flex; flex-direction: column; padding: 20px; background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; text-decoration: none; color: var(--text-primary); transition: all 0.2s; }
@@ -136,50 +229,7 @@ body {
 .clean-footer p { font-size: 0.85rem; color: var(--text-secondary); }
 
 .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
-
-/* Architecture Diagram */
-.architecture-diagram {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.015);
-}
-.diagram-node {
-    padding: 12px 24px;
-    border-radius: 12px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border: 1px solid var(--border-color);
-    background-color: var(--bg-main);
-    color: var(--text-primary);
-}
-.node-queue {
-    background-color: var(--accent-light);
-    border-color: var(--accent-color);
-    color: var(--accent-color);
-}
-.diagram-arrow {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--text-secondary);
-    font-size: 0.8rem;
-    margin: 10px 0;
-}
-.diagram-arrow .lucide { width: 20px; height: 20px; }
-.diagram-row {
-    display: flex; gap: 20px; width: 100%; justify-content: center;
-}
-@media (max-width: 500px) {
-    .diagram-row { flex-direction: column; align-items: center; gap: 10px; }
-}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
 
 /* Roadmap */
 .roadmap-container { display: flex; flex-direction: column; gap: 16px; }
@@ -201,18 +251,37 @@ body {
 .completed .check-circle { background-color: var(--accent-color); color: #fff; }
 .completed .check-circle .lucide { width: 16px; height: 16px; color: #fff; }
 .upcoming .check-circle.empty { border: 2px dashed var(--border-color); background-color: transparent; }
+
+/* ✅ 진행 중 상태 (2026) */
+.roadmap-item.in-progress { border-color: var(--accent-color); background-color: var(--accent-light); }
+.in-progress-circle {
+    background-color: var(--accent-light);
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+.in-progress-circle .lucide { width: 14px; height: 14px; animation: spin 2s linear infinite; }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+.roadmap-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    background-color: var(--accent-color);
+    color: #fff;
+    border-radius: 9999px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
 .roadmap-content h4 { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
 .roadmap-content p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
 .upcoming .roadmap-content h4, .upcoming .roadmap-content p { color: var(--text-secondary); }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
 
-/* AI Search Bar Styles */
-.ai-search-section {
-    margin-bottom: 2rem;
-}
+/* AI Search Bar */
+.ai-search-section { margin-bottom: 2rem; }
 
 .ai-search-wrapper {
-    background: white;
+    background: var(--card-bg);
     border-radius: 16px;
     padding: 1.5rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -222,7 +291,7 @@ body {
 .ai-search-input-group {
     display: flex;
     align-items: center;
-    background: var(--bg-color);
+    background: var(--bg-main);
     border-radius: 12px;
     padding: 0.8rem 1.2rem;
     border: 1px solid var(--border-color);
@@ -230,97 +299,58 @@ body {
 }
 
 .ai-search-input-group:focus-within {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(181, 101, 29, 0.1);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px var(--accent-light);
 }
 
-.ai-icon {
-    color: var(--primary-color);
-    margin-right: 0.8rem;
-    width: 20px;
-    height: 20px;
-}
+.ai-icon { color: var(--accent-color); margin-right: 0.8rem; width: 20px; height: 20px; }
 
 #aiSearchInput {
-    flex: 1;
-    border: none;
-    background: transparent;
-    font-size: 1rem;
-    color: var(--text-color);
-    outline: none;
-    font-family: inherit;
+    flex: 1; border: none; background: transparent;
+    font-size: 1rem; color: var(--text-primary); outline: none; font-family: inherit;
 }
 
 #aiSearchBtn {
-    background: none;
-    border: none;
-    color: var(--text-light);
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: none; border: none; color: var(--text-secondary);
+    cursor: pointer; padding: 0.5rem; border-radius: 8px;
+    transition: all 0.3s ease; display: flex; align-items: center; justify-content: center;
 }
 
-#aiSearchBtn:hover {
-    color: var(--primary-color);
-    background: rgba(181, 101, 29, 0.1);
-}
+#aiSearchBtn:hover { color: var(--accent-color); background: var(--accent-light); }
 
 .ai-response-container {
-    margin-top: 1.5rem;
-    padding: 1.2rem;
-    background: var(--bg-color);
-    border-radius: 12px;
-    border-left: 4px solid var(--primary-color);
-    position: relative;
+    margin-top: 1.5rem; padding: 1.2rem;
+    background: var(--bg-main); border-radius: 12px;
+    border-left: 4px solid var(--accent-color); position: relative;
 }
 
-.ai-response-container.hidden {
-    display: none;
-}
+.ai-response-container.hidden { display: none; }
 
-.ai-response-text {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--text-color);
-}
+.ai-response-text { font-size: 0.95rem; line-height: 1.6; color: var(--text-primary); }
+.ai-response-text.hidden { display: none; }
 
-.ai-response-text.hidden {
-    display: none;
-}
-
-.ai-response-text p {
-    margin-bottom: 0.5rem;
-}
-
-.ai-response-text p:last-child {
-    margin-bottom: 0;
-}
-
-/* Loading Dots */
-.ai-loading {
+/* ✅ AI 폴백 에러 메시지 */
+.ai-error-text {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 0.5rem 0;
+    gap: 8px;
+    font-size: 0.875rem;
+    color: #ef4444;
+    padding: 4px 0;
 }
+.ai-error-text.hidden { display: none; }
+.ai-error-text .lucide { width: 16px; height: 16px; flex-shrink: 0; }
 
-.ai-loading.hidden {
-    display: none;
-}
+.ai-loading { display: flex; align-items: center; gap: 6px; padding: 0.5rem 0; }
+.ai-loading.hidden { display: none; }
 
 .dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--primary-color);
+    width: 8px; height: 8px;
+    background-color: var(--accent-color);
     border-radius: 50%;
     animation: bounce 1.4s infinite ease-in-out both;
     opacity: 0.7;
 }
-
 .dot:nth-child(1) { animation-delay: -0.32s; }
 .dot:nth-child(2) { animation-delay: -0.16s; }
 
@@ -328,3 +358,21 @@ body {
     0%, 80%, 100% { transform: scale(0); }
     40% { transform: scale(1); }
 }
+
+/* Architecture Diagram */
+.architecture-diagram {
+    background-color: var(--card-bg); border: 1px solid var(--border-color);
+    border-radius: 16px; padding: 30px;
+    display: flex; flex-direction: column; align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.015);
+}
+.diagram-node {
+    padding: 12px 24px; border-radius: 12px; font-size: 0.95rem; font-weight: 600;
+    display: flex; align-items: center; gap: 8px;
+    border: 1px solid var(--border-color); background-color: var(--bg-main); color: var(--text-primary);
+}
+.node-queue { background-color: var(--accent-light); border-color: var(--accent-color); color: var(--accent-color); }
+.diagram-arrow { display: flex; align-items: center; gap: 6px; color: var(--text-secondary); font-size: 0.8rem; margin: 10px 0; }
+.diagram-arrow .lucide { width: 20px; height: 20px; }
+.diagram-row { display: flex; gap: 20px; width: 100%; justify-content: center; }
+@media (max-width: 500px) { .diagram-row { flex-direction: column; align-items: center; gap: 10px; } }
